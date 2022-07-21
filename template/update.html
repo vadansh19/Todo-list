@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>TO DO LIST</title>
+  <link href="{{ url_for('static', filename = 'style/style.css') }}" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="container">
+    <h1>TO DO LIST<i class="fa fa-plus"></i></h1>
+    <form action="/update/{{todo.srno}}" method="post">
+      <input type="text"  name="title" placeholder="Update Do List" value="{{todo.title}}" onfocus="this.value=''">
+    </form>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+  <script src="assets/js/style.js" type="text/javascript"></script>
+</body>
+
+</html>

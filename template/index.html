@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>TO DO LIST</title>
+  <link href="{{ url_for('static', filename = 'style/style.css') }}" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="container">
+ 
+      <h1>TO DO LIST<i class="fa fa-plus"></i></h1>
+      <form action="/" method="post">
+        <input type="text" id="title" name="title" placeholder="Add Do List">
+      </form>
+      <ul>
+        {% for todo in allTodo %}
+        <li>
+
+          <a href="/Delete/{{ todo.srno }}">
+            <span>
+              <i class="fa fa-trash"> </i>
+            </span>
+          </a>
+          <a href="/update/{{ todo.srno }}"> {{todo.title}}</a>
+        </li>
+        {% endfor%}
+      </ul>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+  <script src="assets/js/style.js" type="text/javascript"></script>
+</body>
+
+</html>
